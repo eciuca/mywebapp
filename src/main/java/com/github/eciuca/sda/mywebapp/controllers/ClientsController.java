@@ -29,7 +29,7 @@ public class ClientsController {
         model.addAttribute("companyName", "My company");
         model.addAttribute(NEW_CLIENT_FORM, new NewClientFormDto());
 
-        return "clients";
+        return "clients/clients";
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.POST)

@@ -1,0 +1,19 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<table class="table table-light">
+    <thead class="thead-light">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach items="${clientsList}" var="client">
+        <tr>
+            <td>${client.id}</td>
+            <td>${client.firstName}</td>
+            <td>${client.lastName}</td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
