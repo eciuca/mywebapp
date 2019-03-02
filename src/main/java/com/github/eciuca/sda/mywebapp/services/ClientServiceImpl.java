@@ -13,7 +13,17 @@ public class ClientServiceImpl implements ClientService {
     @Autowired
     private ClientRepository clientRepository;
 
-    public List<Client> damiTotiClientii() {
+    public List<Client> getAllClients() {
         return clientRepository.findAll();
+    }
+
+    @Override
+    public Client createClient(String firstName, String lastName) {
+        Client client = new Client();
+
+        client.setFirstName(firstName);
+        client.setLastName(lastName);
+
+        return clientRepository.save(client);
     }
 }

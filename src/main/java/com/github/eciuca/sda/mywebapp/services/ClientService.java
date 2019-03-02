@@ -6,5 +6,7 @@ import java.util.List;
 
 public interface ClientService {
 
-    List<Client> damiTotiClientii();
+    List<Client> getAllClients();
+
+    Client createClient(String firstName, String lastName);
 }
