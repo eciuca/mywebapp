@@ -10,20 +10,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .csrf().disable()
+                .csrf().disable() // disable csrf to be able to send POST requests
                 .authorizeRequests()
-                .antMatchers("/**")
-                .permitAll();
-
-//        super.configure(http);
-//                .antMatchers("/css/**").permitAll()
-//                .anyRequest().authenticated()
-//                .and()
-//                .formLogin()
-//                .loginPage("/login")
-//                .permitAll()
-//                .and()
-//                .logout()
-//                .permitAll();
+                .antMatchers("/**") // match all urls
+                .permitAll(); // allow all matched urls
     }
 }
