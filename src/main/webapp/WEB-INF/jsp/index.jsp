@@ -38,7 +38,7 @@
     </div>
 </nav>
 <div class="container mt-5">
-    <h1>Hello, world!</h1>
+    <h1 class="hello-world-text">Hello, world!</h1>
 </div>
 
 <!-- Optional JavaScript -->
