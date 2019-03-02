@@ -1,10 +1,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <table class="table table-light">
     <thead class="thead-light">
     <tr>
         <th scope="col">#</th>
         <th scope="col">First</th>
         <th scope="col">Last</th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
@@ -13,6 +15,14 @@
             <td>${client.id}</td>
             <td>${client.firstName}</td>
             <td>${client.lastName}</td>
+            <td>
+                <form:form cssClass="form-inline" method="post" action="/clients/delete" modelAttribute="deleteClientForm">
+                    <form:hidden path="clientId" value="${client.id}" />
+                    <form:button type="submit" class="btn btn-danger delete-client-btn">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </form:button>
+                </form:form>
+            </td>
         </tr>
     </c:forEach>
     </tbody>

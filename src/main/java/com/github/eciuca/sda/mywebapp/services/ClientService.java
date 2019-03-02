@@ -9,4 +9,6 @@ public interface ClientService {
     List<Client> getAllClients();
 
     Client createClient(String firstName, String lastName);
+
+    void deleteClient(Long id);
 }
