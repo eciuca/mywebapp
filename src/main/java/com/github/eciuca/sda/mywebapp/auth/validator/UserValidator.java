@@ -3,10 +3,12 @@ package com.github.eciuca.sda.mywebapp.auth.validator;
 import com.github.eciuca.sda.mywebapp.auth.model.User;
 import com.github.eciuca.sda.mywebapp.auth.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
+@Component
 public class UserValidator implements Validator {
 
     @Autowired
