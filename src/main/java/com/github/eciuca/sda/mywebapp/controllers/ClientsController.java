@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -33,7 +32,7 @@ public class ClientsController {
         model.addAttribute(NEW_CLIENT_FORM, new NewClientFormDto());
         model.addAttribute(DELETE_CLIENT_FORM, new DeleteClientFormDto());
 
-        return "clients/clients";
+        return "clients/clients_page";
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.POST)
