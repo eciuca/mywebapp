@@ -5,6 +5,7 @@ import com.github.eciuca.sda.mywebapp.repositories.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -18,11 +19,12 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public Client createClient(String firstName, String lastName) {
+    public Client createClient(String firstName, String lastName, LocalDate dateOfBirth) {
         Client client = new Client();
 
         client.setFirstName(firstName);
         client.setLastName(lastName);
+        client.setDateOfBirth(dateOfBirth);
 
         return clientRepository.save(client);
     }

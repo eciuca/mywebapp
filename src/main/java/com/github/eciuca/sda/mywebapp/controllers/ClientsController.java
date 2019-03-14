@@ -23,26 +23,28 @@ public class ClientsController {
     @Autowired
     private ClientService clientService;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)  // localhost/clients
     public String showClients(Model model) {
         List<Client> list = clientService.getAllClients();
 
+        //region model attributes
         model.addAttribute("clientsList", list);
         model.addAttribute("companyName", "My company");
         model.addAttribute(NEW_CLIENT_FORM, new NewClientFormDto());
         model.addAttribute(DELETE_CLIENT_FORM, new DeleteClientFormDto());
+        //endregion model attributes
 
         return "clients/clients_page";
     }
 
-    @RequestMapping(value = "/new", method = RequestMethod.POST)
+    @RequestMapping(value = "/new", method = RequestMethod.POST) // localhost/clients/new
     public String createClient(@ModelAttribute(NEW_CLIENT_FORM) NewClientFormDto form) {
-        clientService.createClient(form.getFirstName(), form.getLastName());
+        clientService.createClient(form.getFirstName(), form.getLastName(), form.getDateOfBirth());
 
         return "redirect:/clients";
     }
 
-    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    @RequestMapping(value = "/delete", method = RequestMethod.POST) // localhost/clients/delete
     public String deleteClient(@ModelAttribute(DELETE_CLIENT_FORM) DeleteClientFormDto form) {
         clientService.deleteClient(form.getClientId());
 

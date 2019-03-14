@@ -2,6 +2,7 @@ package com.github.eciuca.sda.mywebapp.model;
 
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
@@ -17,6 +18,9 @@ public class Client {
 
     @Column
     private String lastName;
+
+    @Column
+    private LocalDate dateOfBirth;
 
     public Long getId() {
         return id;
@@ -40,6 +44,14 @@ public class Client {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     @Override
